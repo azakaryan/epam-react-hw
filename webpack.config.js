@@ -1,4 +1,3 @@
-
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
@@ -19,7 +18,11 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader?modules'],
+      },
     ]
   },
   plugins: [
