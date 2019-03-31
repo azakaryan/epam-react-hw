@@ -1,26 +1,35 @@
 import React, { Component } from "react";
 import style from './movie-home.css';
-import { Link } from 'react-router-dom'
-import MovieService from './../../services/movieService';
+import MovieService from '../../services/movieService';
+import MovieList from '../../components/common/movie-list/movie-list.jsx'
+import Header from '../../components/common/header/header.jsx'
 
 export default class MovieHome extends Component {
   
   constructor(props) {
     super(props);
-    this.state = {
-      value: null,
-    };
-
+    this.state = {movies: null}
     this.movieService = MovieService
-    debugger
-    this.movieService.getAll().pipe().subscribe(movies => this.movies = movies)  
+  }
+
+  componentDidMount() {
+    this.movieService.getAll().pipe().subscribe(movies => {
+        this.setState({movies})
+    })
   }
   
   render() {
     return (
-      <div className={style.movie_home_container}>
-        <h1>Home Works!!!</h1>
-        <Link to="/movie/1">Details</Link>
+      <div className={style.main_container}>
+        <Header></Header>
+
+        {
+          this.state.movies && (
+            <div>
+              <MovieList movies={this.state.movies}></MovieList>
+            </div>
+          )
+        }
       </div>
     )
   }

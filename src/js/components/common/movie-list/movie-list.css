@@ -1,0 +1,29 @@
+.movies_main {
+    margin: 10px 40px;
+}
+
+.movie_item {
+    display: inline-block;
+    margin: 30px;
+}
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+.title {
+    display: flex;
+    padding: 5px;
+}
+.title div:first-child {
+    font-size: 22px;
+}
+.title div:last-child {
+    border: 1px solid rgba(178, 196, 214, 0.93);
+    margin-left: auto;
+    padding: 3px;
+    border-radius: 3px;
+}
+.genres {
+    padding: 2px 6px;
+    color: #a29b9b;
+}
