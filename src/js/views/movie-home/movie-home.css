@@ -1,3 +1,15 @@
 .main_container {
+    padding: 0 20px;
+}
 
+.sort_and_count {
+  padding: 5px 20px;
+  background: #ececec;
+  display: flex;
+  width: 500px;
+  margin: auto;
+}
+
+.sort_and_count > div:last-child {
+  margin-left: auto;
 }

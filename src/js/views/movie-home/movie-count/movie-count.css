@@ -1,0 +1,8 @@
+.main_container {
+  display: flex;
+  margin: 8px;
+}
+.count {
+  font-weight: 900;
+  margin-right: 8px;
+}

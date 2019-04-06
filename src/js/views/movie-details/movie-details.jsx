@@ -16,15 +16,16 @@ export default class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    this.load(this.id)
+    this.load(this.id);
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.match.params.id && this.id != newProps.match.params.id) this.load(newProps.match.params.id)
+    if (newProps.match.params.id && this.id != newProps.match.params.id) this.load(newProps.match.params.id);
   }
 
   goHome() {
-    this.props.history.push('/')
+    this.movieService.fetchBy();
+    this.props.history.push('/');
   }
 
   render() {
@@ -42,10 +43,14 @@ export default class MovieDetails extends Component {
   }
 
   load(id) {
-    this.id = id
+    this.id = id;
     this.movieService.getById(id).then(movie => {
-        this.setState({movie})
-        this.movieService.getMoviesByGenres(movie.genres).then(movies => this.setState({movies}));
+      this.setState({movie});
+
+      this.movieService.fetchBy({
+        filter: movie.genres.join(','),
+        searchBy: 'genres',
+      }).then(movies => this.setState({movies}));
     });
   }
 }
