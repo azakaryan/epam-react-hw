@@ -15,7 +15,7 @@ export default class MovieList extends Component {
         {
           this.props.movies && this.props.movies.map((movie, index) => {
             return (
-                <Link to={`/movie/${movie.id}`}>
+                <Link key={movie.id} to={`/movie/${movie.id}`}>
                     <div className={style.movie_item}>
                       <div className={style.image}>
                           <img src={movie.poster_path}></img>

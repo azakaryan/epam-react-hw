@@ -1,3 +1,14 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"]
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+
+  "plugins": ["@babel/syntax-dynamic-import"],
+
+  "env": {
+    "test": {
+      "plugins": [
+        "dynamic-import-node",
+        ["transform-es2015-modules-commonjs", {"allowTopLevelThis": true}]
+      ]
+    }
+  }
 }

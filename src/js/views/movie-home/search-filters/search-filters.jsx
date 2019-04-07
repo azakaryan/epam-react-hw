@@ -27,7 +27,7 @@ export default class SearchFilters extends Component {
   }
 
   onSearch() {
-    this.state.filters = Utils.removeblankAttributesfromObject({
+    this.state.filters = Utils.removeBlankAttributesFromObject({
       search: this.state.searchValue,
       searchBy: this.state.searchByValue,
     });
