@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1554626418898" clover="3.2.0">
+  <project timestamp="1554626418899" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="17" coveredconditionals="17" methods="10" coveredmethods="10" elements="43" coveredelements="43" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
+    <file name="type-check.js" path="/Users/azakaryan/Desktop/Projects/EPAM_PROJECT/react/epam-react-hw/src/js/services/utils/type-check.js">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
+      <line num="6" count="9" type="stmt"/>
+      <line num="10" count="13" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="18" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="30" count="2" type="stmt"/>
+    </file>
+    <file name="utils.js" path="/Users/azakaryan/Desktop/Projects/EPAM_PROJECT/react/epam-react-hw/src/js/services/utils/utils.js">
+      <metrics statements="9" coveredstatements="9" conditionals="15" coveredconditionals="15" methods="3" coveredmethods="3"/>
+      <line num="6" count="10" type="stmt"/>
+      <line num="7" count="19" type="stmt"/>
+      <line num="8" count="19" type="cond" truecount="8" falsecount="0"/>
+      <line num="10" count="10" type="stmt"/>
+      <line num="14" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="5" type="stmt"/>
+      <line num="16" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="22" count="6" type="cond" truecount="2" falsecount="0"/>
+    </file>
+  </project>
+</coverage>
