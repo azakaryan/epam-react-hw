@@ -24,6 +24,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "css-loader": "^2.1.1",
+    "cypress": "^3.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
@@ -45,7 +46,9 @@
     "start": "webpack-dev-server --config=env/webpack.dev.js --mode development",
     "build-dev": "webpack -p --progress --config=env/webpack.dev.js --mode development",
     "build-prod": "webpack -p --progress --config=env/webpack.prod.js --mode production",
-    "test": "jest"
+    "test": "jest",
+    "e2e": "node_modules/.bin/cypress run",
+    "coverage": "npx jest --coverage"
   },
   "repository": {
     "type": "git",

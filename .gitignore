@@ -1,3 +1,6 @@
-node_modules
+node_modules/
 .idea/
 dist/
+cypress/screenshotsFolder/
+cypress/videosFolder/
+coverage/
