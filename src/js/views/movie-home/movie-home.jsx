@@ -39,7 +39,7 @@ export default class MovieHome extends Component {
   
   render() {
     return (
-      <div className={style.main_container}>
+      <div id="movie-home" className={style.main_container}>
         <Header></Header>
         <SearchFilters onFiltersApply={this.onFiltersApply.bind(this)}></SearchFilters>
         <div className={style.sort_and_count}>

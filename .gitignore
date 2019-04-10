@@ -3,4 +3,5 @@ node_modules/
 dist/
 cypress/screenshotsFolder/
 cypress/videosFolder/
+cypress/videos/
 coverage/

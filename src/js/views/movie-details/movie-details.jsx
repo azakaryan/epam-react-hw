@@ -30,8 +30,8 @@ export default class MovieDetails extends Component {
 
   render() {
     return (
-      <div className={style.main}>
-        <div className={style.search}><Button variant="contained" color="primary" onClick={this.goHome.bind(this)}>SEARCH</Button></div>
+      <div id="movie-details" className={style.main}>
+        <div id="search-btn" className={style.search}><Button variant="contained" color="primary" onClick={this.goHome.bind(this)}>SEARCH</Button></div>
         {
           this.state.movie && (<MovieCover movie={this.state.movie}></MovieCover>)
         }

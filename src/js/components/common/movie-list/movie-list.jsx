@@ -11,12 +11,12 @@ export default class MovieList extends Component {
   
   render() {
     return (
-      <div className={style.movies_main}>
+      <div id="movies" className={style.movies_main}>
         {
           this.props.movies && this.props.movies.map((movie, index) => {
             return (
                 <Link key={movie.id} to={`/movie/${movie.id}`}>
-                    <div className={style.movie_item}>
+                    <div className={style.movie_item} id="movie">
                       <div className={style.image}>
                           <img src={movie.poster_path}></img>
                       </div>
