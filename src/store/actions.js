@@ -20,7 +20,6 @@ export const addMovieAlongSimilarMoviesGenres = (movieId) => async (dispatch, ge
 
   await dispatch(fetchMovie(movieId));
   const state = getState();
-  debugger
   dispatch(fetchMovies({filter: state.movie.genres.join(','), searchBy: 'genres'}));
 };
 

@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieList Component should render correctly in "debug" mode 1`] = `
+exports[`MovieItem Component should render correctly in "debug" mode 1`] = `
 <div
   className="movies_main"
 />
 `;
 
-exports[`MovieList Component should render movies correctly with given data 1`] = `
+exports[`MovieItem Component should render movies correctly with given data 1`] = `
 <div
   className="movies_main"
 >

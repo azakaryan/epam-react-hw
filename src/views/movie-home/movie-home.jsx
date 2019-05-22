@@ -12,6 +12,7 @@ export default class MovieHome extends Component {
   
   constructor(props) {
     super(props);
+    this.props.onLoad()
   }
   
   render() {

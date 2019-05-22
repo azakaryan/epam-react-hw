@@ -8,20 +8,16 @@ export default class MovieDetails extends Component {
 
   constructor(props) {
     super(props);
-    this.id = this.props.match.params.id;
-    this.props.onLoad(this.id)
+    this.props.onLoad(this.props.match.params.id)
   }
 
   componentWillReceiveProps(newProps) {
-    const id = newProps.match.params.id
-    if (newProps.match.params.id && this.id != id) {
-      this.id = id;
-      this.props.onLoad(this.id);
-    }
+    const oldId = this.props.match.params.id;
+    const id = newProps.match.params.id;
+    if (id && oldId !== id) this.props.onLoad(id);
   }
 
   goHome() {
-    // this.movieService.fetchBy();
     this.props.history.push('/');
   }
 
