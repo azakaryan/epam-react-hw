@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import MovieDetails from './views/movie-details/movie-details.container.js';
-import MovieHome from './views/movie-home/movie-home.jsx';
+import MovieHome from './views/movie-home/movie-home.container.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import { Provider } from 'react-redux';
 import storeFactory from './store/index.js';
