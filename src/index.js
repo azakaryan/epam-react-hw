@@ -1,18 +1,36 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import MovieDetails from './js/views/movie-details/movie-details.jsx';
-import MovieHome from './js/views/movie-home/movie-home.jsx';
+import MovieDetails from './views/movie-details/movie-details.container.js';
+import MovieHome from './views/movie-home/movie-home.jsx';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
- 
- const app = document.getElementById("el");
+import { Provider } from 'react-redux';
+import storeFactory from './store/index.js';
+const sampleData = {
+  "movie": null,
+  "movies": [],
+  "errors": [],
+  "fetchingMovies": false,
+  "fetchingMovie": false,
+};
 
- if (app) {
-    ReactDOM.render(
-        <Router>
-            <Switch>
-                <Route path="/" exact component={MovieHome}/>
-                <Route path="/movie/:id" component={MovieDetails}/>
-            </Switch>
-        </Router>,
-    app);
- }
+const app = document.getElementById("el");
+
+if (app) {
+
+  const localStorageData = localStorage['redux-store'];
+  const store = storeFactory(localStorageData ? JSON.parse(localStorageData) : sampleData);
+  const saveState = () => localStorage['redux-store'] = JSON.stringify(store.getState());
+  store.subscribe(saveState);
+
+  ReactDOM.render(
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={MovieHome}/>
+          <Route path="/movie/:id" component={MovieDetails}/>
+        </Switch>
+      </Router>
+    </Provider>,
+    app
+  );
+}

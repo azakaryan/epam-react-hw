@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import style from './movie-list.css';
 import {Link} from "react-router-dom";
+import * as PropTypes from "prop-types";
 
 
 export default class MovieList extends Component {
   
   constructor(props) {
     super(props);
+  }
+
+  static propTypes = {
+    name: PropTypes.array.isRequired
+  }
+
+  static defaultProps = {
+    name: []
   }
   
   render() {

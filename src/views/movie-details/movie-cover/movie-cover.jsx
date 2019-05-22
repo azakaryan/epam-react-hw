@@ -8,6 +8,10 @@ export default class MovieCover extends Component {
   }
 
   render() {
+      if (!this.props.movie) {
+        return null;
+      }
+
       return (
           <div className={style.main}>
               <div>
