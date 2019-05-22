@@ -13,18 +13,8 @@ class MovieService {
     return fetch(`https://reactjs-cdp.herokuapp.com/movies${queryParams ? `?${queryParams}` : ''}`)
       .then(response => response.json(), (err) => alert(JSON.stringify(err)))
       .then(({data}) => {
-        this.setAll(data);
         return data;
       })
-  }
-
-  getBy(data) {
-    if (!this.movies$) this.fetchBy(data);
-    return this.movies$.asObservable();
-  }
-
-  setAll(movies) {
-    this.movies$.next(movies);
   }
 
   /*

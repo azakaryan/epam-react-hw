@@ -22,7 +22,7 @@ export default class SortFilters extends Component {
   }
 
   onSortApply() {
-    this.props.onSortApply(Utils.removeBlankAttributesFromObject({sortBy: this.state.sortByValue}));
+    this.props.onFiltersApply(Utils.removeBlankAttributesFromObject({sortBy: this.state.sortByValue}))
   }
 
   render() {

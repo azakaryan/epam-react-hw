@@ -8,6 +8,7 @@ import storeFactory from './store/index.js';
 const sampleData = {
   "movie": null,
   "movies": [],
+  "filters": {},
   "errors": [],
   "fetchingMovies": false,
   "fetchingMovie": false,

@@ -1,5 +1,6 @@
 import C from './constants.js';
 import {combineReducers} from "redux";
+import Utils from "../services/utils/utils";
 
 /* MOVIE */
 export const movie = (state = {}, action) => {
@@ -12,6 +13,13 @@ export const movie = (state = {}, action) => {
 export const movies = (state = [], action) => {
   return action.type === C.ADD_MOVIES
     ? action.payload
+    : state
+};
+
+/* FILTERS */
+export const filters = (state = {}, action) => {
+  return action.type === C.UPDATE_FILTERS
+    ? Utils.removeBlankAttributesFromObject({...state, ...action.payload})
     : state
 };
 
@@ -53,6 +61,7 @@ export const fetchingMovie = (state = false, action) => {
 export const appReducer = combineReducers({
   movies,
   movie,
+  filters,
   errors,
   fetchingMovie,
   fetchingMovies

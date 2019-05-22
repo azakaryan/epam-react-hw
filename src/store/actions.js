@@ -1,5 +1,5 @@
 import C from './constants.js';
-const queryString = require('query-string');
+import MovieService from '../services/movieService.js';
 
 export const addMovie = (movie) => ({
     type: C.ADD_MOVIE,
@@ -10,51 +10,44 @@ export const addMovies = (movies) => ({
     payload: movies,
   });
 
-export const addError = (message) => ({
-    type: C.ADD_ERROR,
-    payload: message,
+export const updateFilters = (filters) => ({
+    type: C.UPDATE_FILTERS,
+    payload: filters,
   });
 
-export const clearError = (index) => ({
-    type: C.CLEAR_ERROR,
-    payload: index,
-  });
+export const addMovieAlongSimilarMoviesGenres = (movieId) => async (dispatch, getState) => {
+  dispatch({type: C.START_FETCHING_MOVIE});
 
+  await dispatch(fetchMovie(movieId));
+  const state = getState();
+  debugger
+  dispatch(fetchMovies({filter: state.movie.genres.join(','), searchBy: 'genres'}));
+};
 
-export const fetchMovies = (data) => (dispatch) => {
-  const queryParams = queryString.stringify(data);
+export const fetchMovies = (filters) => (dispatch, getState) => {
+  dispatch(updateFilters(filters));
 
+  const state = getState();
   dispatch({type: C.START_FETCHING_MOVIES});
 
-  fetch(`https://reactjs-cdp.herokuapp.com/movies${queryParams ? `?${queryParams}` : ''}`)
-    .then(response => response.json())
-    .then(({data}) => {
-      dispatch({
-        type: C.ADD_MOVIES,
-        payload: data,
-      });
-    })
+  return MovieService
+    .fetchBy(state.filters)
+    .then(movies => dispatch(addMovies(movies)))
     .catch(err => {
       dispatch({
         type: C.CANCEL_FETCHING_MOVIES,
         payload: err,
       });
-    })
+    });
 };
 
-/*
-* GET single movie by Id
-* */
-export const fetchMovie = (id) => (dispatch) => {
+export const fetchMovie = (movieId) => (dispatch) => {
   dispatch({type: C.START_FETCHING_MOVIE});
 
-  fetch(`https://reactjs-cdp.herokuapp.com/movies/${id}`)
-    .then(response => response.json())
-    .then((data) => {
-      dispatch({
-        type: C.ADD_MOVIE,
-        payload: data,
-      });
+  return MovieService
+    .getById(movieId)
+    .then(movie => {
+      dispatch(addMovie(movie));
     })
     .catch(err => {
       dispatch({
