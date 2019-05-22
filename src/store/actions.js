@@ -1,6 +1,15 @@
 import C from './constants.js';
 const queryString = require('query-string');
 
+export const addMovie = (movie) => ({
+    type: C.ADD_MOVIE,
+    payload: movie,
+  });
+export const addMovies = (movies) => ({
+    type: C.ADD_MOVIES,
+    payload: movies,
+  });
+
 export const addError = (message) => ({
     type: C.ADD_ERROR,
     payload: message,
@@ -37,7 +46,6 @@ export const fetchMovies = (data) => (dispatch) => {
 * GET single movie by Id
 * */
 export const fetchMovie = (id) => (dispatch) => {
-  debugger
   dispatch({type: C.START_FETCHING_MOVIE});
 
   fetch(`https://reactjs-cdp.herokuapp.com/movies/${id}`)

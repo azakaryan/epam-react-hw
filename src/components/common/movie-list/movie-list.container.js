@@ -1,21 +1,10 @@
 import { connect } from 'react-redux'
 import MovieList from "./movie-list.jsx";
-import { fetchMovie } from '../../../store/actions.js';
 
 const mapStateToProps = (state) => {
   return {
-
+    movies: state.movies,
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onLoad(movieId) {
-      dispatch(fetchMovie(movieId));
-    }
-  }
-};
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(MovieDetails);
-
-export default Container;
+export default connect(mapStateToProps)(MovieList);

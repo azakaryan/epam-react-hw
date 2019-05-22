@@ -12,13 +12,15 @@ export default class MovieList extends Component {
 
   static propTypes = {
     name: PropTypes.array.isRequired
-  }
+  };
 
   static defaultProps = {
     name: []
-  }
+  };
   
   render() {
+    if (!this.props.movies) return null;
+
     return (
       <div id="movies" className={style.movies_main}>
         {
