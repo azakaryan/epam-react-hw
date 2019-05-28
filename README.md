@@ -1,20 +1,10 @@
-HW 4  `Testing`
+HW 7  `SSR`
 
-To run tests run `npm test`
+To build and perform server side rendering (ssr) run `npm run ssr_start && node server.js`
 
-To see the report of test coverage run `npm run coverage`
+then navigate the browser to `http://localhost:3000` 
 
-To run e2e tests with *cypress* in headless mode run `e2e`
+That's it )).
+  
 
-
-
-
-*Useful Info*
-
-cypress
-  `To control the test run use:`  
-  ```
-    Replacing it with xit tests you want to omit
-    Using it.skip on tests you want to omit
-    Using it.only on single test you want to run
-  ```
+  

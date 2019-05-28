@@ -9,10 +9,13 @@ import SearchFilters from "./search-filters/search-filters.container.js";
 import SortFilters from "./sort-filters/sort-filters.containers.js";
 
 export default class MovieHome extends Component {
-  
+
   constructor(props) {
     super(props);
-    this.props.onLoad()
+  }
+
+  componentDidMount() {
+     this.props.onLoad();
   }
   
   render() {

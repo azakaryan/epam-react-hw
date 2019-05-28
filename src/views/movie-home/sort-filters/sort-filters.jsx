@@ -9,8 +9,10 @@ export default class SortFilters extends Component {
     this.state = {
       sortByValue: 'release_date',
     };
-    // TODO change this.
-    this.onSortApply()
+  }
+
+  componentDidMount() {
+    this.onSortApply();
   }
 
   toggleReleaseDate() {

@@ -1,5 +1,6 @@
 import { ReplaySubject } from 'rxjs';
 const queryString = require('query-string');
+const fetch = require("cross-fetch");
 
 class MovieService {
 
