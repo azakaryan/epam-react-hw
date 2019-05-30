@@ -15,19 +15,6 @@ export const updateFilters = filters => ({
   payload: filters,
 });
 
-export const addMovieAlongSimilarMoviesGenres = movieId => async (
-  dispatch,
-  getState,
-) => {
-  dispatch({ type: C.START_FETCHING_MOVIE });
-
-  await dispatch(fetchMovie(movieId));
-  const state = getState();
-  dispatch(
-    fetchMovies({ filter: state.movie.genres.join(','), searchBy: 'genres' }),
-  );
-};
-
 export const fetchMovies = filters => (dispatch, getState) => {
   dispatch(updateFilters(filters));
 
@@ -57,4 +44,14 @@ export const fetchMovie = movieId => (dispatch) => {
         payload: err,
       });
     });
+};
+
+export const addMovieAlongSimilarMoviesGenres = movieId => async (dispatch, getState) => {
+  dispatch({ type: C.START_FETCHING_MOVIE });
+
+  await dispatch(fetchMovie(movieId));
+  const state = getState();
+  dispatch(
+    fetchMovies({ filter: state.movie.genres.join(','), searchBy: 'genres' }),
+  );
 };

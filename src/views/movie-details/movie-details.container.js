@@ -8,4 +8,7 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(null, mapDispatchToProps)(MovieDetails);
+export default connect(
+  null,
+  mapDispatchToProps,
+)(MovieDetails);

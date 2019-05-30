@@ -8,7 +8,6 @@ import routes from './routes';
 import { storeFactory } from './store/index';
 import App from './components/App';
 
-
 import 'source-map-support/register';
 
 const app = express();
@@ -16,14 +15,19 @@ app.use(cors());
 
 app.use(express.static('public'));
 
-
 app.get('*', (req, res, next) => {
   console.log('called ---->>>>  >>> >>>>');
   const store = storeFactory();
 
   const promises = routes.reduce((acc, route) => {
-    if (matchPath(req.url, route) && route.component && route.component.initialAction) {
-      acc.push(Promise.resolve(store.dispatch(route.component.initialAction())));
+    if (
+      matchPath(req.url, route)
+      && route.component
+      && route.component.initialAction
+    ) {
+      acc.push(
+        Promise.resolve(store.dispatch(route.component.initialAction())),
+      );
     }
     return acc;
   }, []);

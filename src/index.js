@@ -9,8 +9,10 @@ const app = document.getElementById('el');
 
 if (app) {
   const localStorageData = localStorage['redux-store'];
-  const store = storeFactory(localStorageData ? JSON.parse(localStorageData) : undefined);
-  const saveState = () => localStorage['redux-store'] = JSON.stringify(store.getState());
+  const store = storeFactory(
+    localStorageData ? JSON.parse(localStorageData) : undefined,
+  );
+  const saveState = () => (localStorage['redux-store'] = JSON.stringify(store.getState()));
   store.subscribe(saveState);
 
   ReactDOM.hydrate(

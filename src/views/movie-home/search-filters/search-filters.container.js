@@ -8,4 +8,7 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(null, mapDispatchToProps)(SearchFilters);
+export default connect(
+  null,
+  mapDispatchToProps,
+)(SearchFilters);

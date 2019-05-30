@@ -3,8 +3,8 @@ import { TypeCheck } from './type-check';
 
 describe('TypeCheck tests', () => {
   /*
-  * isArray
-  * */
+   * isArray
+   * */
   test('isArray Success case', () => {
     expect(TypeCheck.isArray([])).toBe(true);
   });
@@ -18,8 +18,8 @@ describe('TypeCheck tests', () => {
   });
 
   /*
-  * isObject
-  * */
+   * isObject
+   * */
   test('isObject Success case', () => {
     expect(TypeCheck.isObject({ name: 3 })).toBe(true);
   });
@@ -45,8 +45,8 @@ describe('TypeCheck tests', () => {
   });
 
   /*
-  * isString
-  * */
+   * isString
+   * */
   test('isString Success case', () => {
     expect(TypeCheck.isString('hello')).toBe(true);
   });
@@ -56,8 +56,8 @@ describe('TypeCheck tests', () => {
   });
 
   /*
-  * isFunction
-  * */
+   * isFunction
+   * */
   test('isFunction Success case', () => {
     expect(TypeCheck.isFunction(() => {})).toBe(true);
   });
@@ -67,8 +67,8 @@ describe('TypeCheck tests', () => {
   });
 
   /*
-  * isBoolean
-  * */
+   * isBoolean
+   * */
   test('isBoolean Success case', () => {
     expect(TypeCheck.isBoolean(true)).toBe(true);
   });
@@ -78,8 +78,8 @@ describe('TypeCheck tests', () => {
   });
 
   /*
-  * isNumber
-  * */
+   * isNumber
+   * */
   test('isNumber Success case', () => {
     expect(TypeCheck.isNumber(234)).toBe(true);
   });
@@ -89,8 +89,8 @@ describe('TypeCheck tests', () => {
   });
 
   /*
-  * isObservable
-  * */
+   * isObservable
+   * */
   test('isObservable Success case', () => {
     expect(TypeCheck.isObservable(from([1, 2, 3]))).toBe(true);
   });

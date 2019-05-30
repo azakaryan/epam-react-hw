@@ -11,4 +11,7 @@ const mapDispatchToProps = dispatch => ({
   }),
 });
 
-export default connect(null, mapDispatchToProps)(SortFilters);
+export default connect(
+  null,
+  mapDispatchToProps,
+)(SortFilters);

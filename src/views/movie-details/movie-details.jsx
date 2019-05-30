@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import style from './movie-details.css'
-import MovieList from "../../components/common/movie-list/movie-list.container";
-import MovieCover from './movie-cover/movie-cover.container'
-import Button from "@material-ui/core/Button/Button";
+import React, { Component } from 'react';
+import Button from '@material-ui/core/Button/Button';
+import style from './movie-details.css';
+import MovieList from '../../components/common/movie-list/movie-list.container';
+import MovieCover from './movie-cover/movie-cover.container';
 
 export default class MovieDetails extends Component {
-
   constructor(props) {
     super(props);
-    this.props.onLoad(this.props.match.params.id)
+    this.props.onLoad(this.props.match.params.id);
   }
 
   componentWillReceiveProps(newProps) {
@@ -24,10 +23,18 @@ export default class MovieDetails extends Component {
   render() {
     return (
       <div id="movie-details" className={style.main}>
-        <div id="search-btn" className={style.search}><Button variant="contained" color="primary" onClick={this.goHome.bind(this)}>SEARCH</Button></div>
-        <MovieCover></MovieCover>
-        <MovieList></MovieList>
+        <div id="search-btn" className={style.search}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.goHome.bind(this)}
+          >
+            SEARCH
+          </Button>
+        </div>
+        <MovieCover />
+        <MovieList />
       </div>
-    )
+    );
   }
 }

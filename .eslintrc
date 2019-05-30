@@ -1,4 +1,11 @@
 {
   "extends": ["airbnb"],
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "rules": {
+    "indent": ["error", 2],
+    "max-line-length": [
+      true,
+      126
+    ],
+  }
 }

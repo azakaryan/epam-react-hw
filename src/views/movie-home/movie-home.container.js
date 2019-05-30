@@ -13,4 +13,7 @@ const mapDispatchToProps = dispatch => ({
 
 MovieHome.initialAction = () => fetchMovies({ filter: null, search: null, searchBy: null });
 
-export default connect(null, mapDispatchToProps)(MovieHome);
+export default connect(
+  null,
+  mapDispatchToProps,
+)(MovieHome);
