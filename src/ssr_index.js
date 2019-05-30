@@ -42,6 +42,7 @@ app.get("*", (req, res, next) => {
         <!DOCTYPE html>
         <html>
           <head>
+            <link rel="stylesheet" type="text/css" href="/main.css">
             <script src="/bundle.js" defer></script>
           </head>
           <body>

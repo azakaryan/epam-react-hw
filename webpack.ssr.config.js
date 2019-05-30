@@ -1,6 +1,4 @@
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const browserConfig = {
   devServer: {
@@ -45,7 +43,7 @@ const serverConfig = {
     rules: [
       {
         test: /\.css$/,
-        use: ['css-loader'],
+        use: [MiniCssExtractPlugin.loader,'css-loader?modules'],
       },
       {
         test: /\.(js|jsx)$/,
@@ -55,7 +53,12 @@ const serverConfig = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: `public/[name].css`
+    })
+  ]
 };
 
 module.exports = [browserConfig, serverConfig];
