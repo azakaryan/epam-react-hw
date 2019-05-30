@@ -1,24 +1,24 @@
-import express from "express";
-import cors from "cors";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import { Provider } from "react-redux";
-import { StaticRouter, matchPath } from "react-router-dom";
-import routes from "./routes";
-import { storeFactory } from './store/index.js';
-import App from './components/App.jsx';
+import express from 'express';
+import cors from 'cors';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { Provider } from 'react-redux';
+import { StaticRouter, matchPath } from 'react-router-dom';
+import routes from './routes';
+import { storeFactory } from './store/index';
+import App from './components/App';
 
 
-import "source-map-support/register";
+import 'source-map-support/register';
 
 const app = express();
 app.use(cors());
 
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 
-app.get("*", (req, res, next) => {
-  console.log("called ---->>>>  >>> >>>>");
+app.get('*', (req, res, next) => {
+  console.log('called ---->>>>  >>> >>>>');
   const store = storeFactory();
 
   const promises = routes.reduce((acc, route) => {
@@ -29,16 +29,16 @@ app.get("*", (req, res, next) => {
   }, []);
 
   Promise.all(promises)
-  .then(() => {
-    const markup = renderToString(
-      <Provider store={store}>
-        <StaticRouter location={req.url}>
-          <App />
-        </StaticRouter>
-      </Provider>
-    );
+    .then(() => {
+      const markup = renderToString(
+        <Provider store={store}>
+          <StaticRouter location={req.url}>
+            <App />
+          </StaticRouter>
+        </Provider>,
+      );
 
-    res.send(`
+      res.send(`
         <!DOCTYPE html>
         <html>
           <head>
@@ -50,10 +50,10 @@ app.get("*", (req, res, next) => {
           </body>
         </html>
       `);
-  })
-  .catch(next);
+    })
+    .catch(next);
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("Server is listening");
+  console.log('Server is listening');
 });

@@ -1,10 +1,9 @@
-import {Component} from "react";
-import React from "react";
-import {Route, Switch} from "react-router";
-import routes from "../routes";
+import { Component } from 'react';
+import React from 'react';
+import { Route, Switch } from 'react-router';
+import routes from '../routes';
 
 export default class App extends Component {
-
   constructor(props) {
     super(props);
   }
@@ -12,7 +11,9 @@ export default class App extends Component {
   render() {
     return (
       <Switch>
-        {routes.map((route, i) => <Route key={i} {...route} />)}
+        {routes.map((route, i) => (
+          <Route key={i} {...route} />
+        ))}
       </Switch>
     );
   }

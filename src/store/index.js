@@ -1,23 +1,22 @@
-import {createStore, applyMiddleware} from "redux";
-import {appReducer} from './reducers.js';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { appReducer } from './reducers';
 
 export const sampleData = {
-  "movie": null,
-  "movies": [],
-  "filters": {},
-  "errors": [],
-  "fetchingMovies": false,
-  "fetchingMovie": false,
+  movie: null,
+  movies: [],
+  filters: {},
+  errors: [],
+  fetchingMovies: false,
+  fetchingMovie: false,
 };
 
-const consoleMessagesProxy = store => next => action => {
-  let result;
+const consoleMessagesProxy = () => next => (action) => {
   // Before action dispatch
   // console.log(` -- Dispatching actions: ${action.type}`);
 
   // Dispatch the action
-  result = next(action);
+  const result = next(action);
 
   // After action dispatch
 
@@ -27,6 +26,7 @@ const consoleMessagesProxy = store => next => action => {
   return result;
 };
 
-export const storeFactory = (initialState = sampleData) => {
-  return applyMiddleware(thunk, consoleMessagesProxy)(createStore)(appReducer, initialState);
-};
+export const storeFactory = (initialState = sampleData) => applyMiddleware(thunk, consoleMessagesProxy)(createStore)(
+  appReducer,
+  initialState,
+);

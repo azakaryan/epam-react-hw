@@ -1,13 +1,11 @@
-import { connect } from 'react-redux'
-import SearchFilters from "./search-filters.jsx";
-import { fetchMovies } from "../../../store/actions.js";
+import { connect } from 'react-redux';
+import SearchFilters from './search-filters';
+import { fetchMovies } from '../../../store/actions';
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onFiltersApply(filters = {}) {
-      dispatch(fetchMovies(filters));
-    }
-  }
-};
+const mapDispatchToProps = dispatch => ({
+  onFiltersApply(filters = {}) {
+    dispatch(fetchMovies(filters));
+  },
+});
 
 export default connect(null, mapDispatchToProps)(SearchFilters);

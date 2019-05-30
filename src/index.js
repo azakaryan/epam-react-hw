@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { storeFactory } from './store/index.js';
-import App from './components/App.jsx';
+import { storeFactory } from './store/index';
+import App from './components/App';
 
-const app = document.getElementById("el");
+const app = document.getElementById('el');
 
 if (app) {
-
   const localStorageData = localStorage['redux-store'];
   const store = storeFactory(localStorageData ? JSON.parse(localStorageData) : undefined);
   const saveState = () => localStorage['redux-store'] = JSON.stringify(store.getState());
@@ -20,6 +19,6 @@ if (app) {
         <App />
       </BrowserRouter>
     </Provider>,
-    app
+    app,
   );
 }

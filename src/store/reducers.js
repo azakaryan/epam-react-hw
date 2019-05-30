@@ -1,27 +1,17 @@
-import C from './constants.js';
-import {combineReducers} from "redux";
-import Utils from "../services/utils/utils";
+import { combineReducers } from 'redux';
+import C from './constants';
+import Utils from '../services/utils/utils';
 
 /* MOVIE */
-export const movie = (state = {}, action) => {
-  return action.type === C.ADD_MOVIE
-    ? action.payload
-    : state
-};
+export const movie = (state = {}, action) => (action.type === C.ADD_MOVIE ? action.payload : state);
 
 /* MOVIES */
-export const movies = (state = [], action) => {
-  return action.type === C.ADD_MOVIES
-    ? action.payload
-    : state
-};
+export const movies = (state = [], action) => (action.type === C.ADD_MOVIES ? action.payload : state);
 
 /* FILTERS */
-export const filters = (state = {}, action) => {
-  return action.type === C.UPDATE_FILTERS
-    ? Utils.removeBlankAttributesFromObject({...state, ...action.payload})
-    : state
-};
+export const filters = (state = {}, action) => (action.type === C.UPDATE_FILTERS
+  ? Utils.removeBlankAttributesFromObject({ ...state, ...action.payload })
+  : state);
 
 /* ERRORS */
 export const errors = (state = [], action) => {
@@ -31,7 +21,7 @@ export const errors = (state = [], action) => {
     case C.CLEAR_ERROR:
       return state.filter(str => str !== action.payload);
     default:
-      return state
+      return state;
   }
 };
 
@@ -43,7 +33,7 @@ export const fetchingMovies = (state = false, action) => {
     case C.CANCEL_FETCHING_MOVIES:
       return false;
     default:
-      return state
+      return state;
   }
 };
 export const fetchingMovie = (state = false, action) => {
@@ -53,10 +43,9 @@ export const fetchingMovie = (state = false, action) => {
     case C.CANCEL_FETCHING_MOVIE:
       return false;
     default:
-      return state
+      return state;
   }
 };
-
 
 export const appReducer = combineReducers({
   movies,
@@ -64,6 +53,5 @@ export const appReducer = combineReducers({
   filters,
   errors,
   fetchingMovie,
-  fetchingMovies
+  fetchingMovies,
 });
-

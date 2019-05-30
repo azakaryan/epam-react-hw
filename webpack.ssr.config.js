@@ -27,6 +27,9 @@ const browserConfig = {
         use: ['style-loader', 'css-loader?modules'],
       },
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   }
 };
 
@@ -58,7 +61,10 @@ const serverConfig = {
     new MiniCssExtractPlugin({
       filename: `public/[name].css`
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
 };
 
 module.exports = [browserConfig, serverConfig];

@@ -1,8 +1,7 @@
-import {TypeCheck} from "./type-check";
-import { from } from 'rxjs';
+import { from } from 'r';
+import { TypeCheck } from './type-check';
 
 describe('TypeCheck tests', () => {
-
   /*
   * isArray
   * */
@@ -15,14 +14,14 @@ describe('TypeCheck tests', () => {
   });
 
   test('isArray Error case', () => {
-    expect(TypeCheck.isArray({name: 3})).not.toBe(true);
+    expect(TypeCheck.isArray({ name: 3 })).not.toBe(true);
   });
 
   /*
   * isObject
   * */
   test('isObject Success case', () => {
-    expect(TypeCheck.isObject({name: 3})).toBe(true);
+    expect(TypeCheck.isObject({ name: 3 })).toBe(true);
   });
 
   test('isObject Error case', () => {
@@ -93,11 +92,10 @@ describe('TypeCheck tests', () => {
   * isObservable
   * */
   test('isObservable Success case', () => {
-    expect(TypeCheck.isObservable(from([1,2,3]))).toBe(true);
+    expect(TypeCheck.isObservable(from([1, 2, 3]))).toBe(true);
   });
 
   test('isObservable Error case', () => {
     expect(TypeCheck.isObservable(new Promise(() => {}))).not.toBe(true);
   });
-
 });

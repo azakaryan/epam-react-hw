@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import style from './movie-details.css'
-import MovieList from "../../components/common/movie-list/movie-list.container.js";
-import MovieCover from './movie-cover/movie-cover.container.js'
+import MovieList from "../../components/common/movie-list/movie-list.container";
+import MovieCover from './movie-cover/movie-cover.container'
 import Button from "@material-ui/core/Button/Button";
 
 export default class MovieDetails extends Component {
