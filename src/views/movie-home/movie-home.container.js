@@ -5,7 +5,7 @@ import { fetchMovies } from '../../store/actions';
 const mapDispatchToProps = dispatch => ({
   onLoad: () => dispatch((_, getState) => {
     const state = getState();
-    if (!state.movies.length) {
+    if (!state.get('movies').length) {
       dispatch(fetchMovies({ filter: null, search: null, searchBy: null }));
     }
   }),

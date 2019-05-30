@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import Immutable from 'immutable';
 import { appReducer } from './reducers';
 
 export const sampleData = {
@@ -26,7 +27,6 @@ const consoleMessagesProxy = () => next => (action) => {
   return result;
 };
 
-export const storeFactory = (initialState = sampleData) => applyMiddleware(thunk, consoleMessagesProxy)(createStore)(
-  appReducer,
-  initialState,
-);
+export const storeFactory = (initialState = sampleData) => {
+  return applyMiddleware(thunk, consoleMessagesProxy)(createStore)(appReducer, Immutable.Map(initialState));
+}

@@ -2,12 +2,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const browserConfig = {
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
     path: __dirname,
-    filename: 'public/bundle.js'
+    filename: 'public/bundle.js',
   },
   mode: 'development',
   devtool: 'inline-source-map',
@@ -16,30 +16,30 @@ const browserConfig = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ['babel-loader'],
       },
       {
         test: /\.html$/,
-        use: ["html-loader"]
+        use: ['html-loader'],
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader?modules'],
       },
-    ]
+    ],
   },
   resolve: {
-    extensions: ['.js', '.jsx']
-  }
+    extensions: ['.js', '.jsx'],
+  },
 };
 
 const serverConfig = {
-  entry: "./src/ssr_index.js",
-  target: "node",
+  entry: './src/ssr_index.js',
+  target: 'node',
   output: {
     path: __dirname,
-    filename: "server.js",
-    libraryTarget: "commonjs2"
+    filename: 'server.js',
+    libraryTarget: 'commonjs2'
   },
   devtool: 'inline-source-map',
   module: {
@@ -52,19 +52,19 @@ const serverConfig = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
-      }
-    ]
+          loader: 'babel-loader',
+        },
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `public/[name].css`
-    })
+      filename: `public/[name].css`,
+    }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
-  }
+    extensions: ['.js', '.jsx'],
+  },
 };
 
 module.exports = [browserConfig, serverConfig];

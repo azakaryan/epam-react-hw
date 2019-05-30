@@ -21,7 +21,7 @@ export const fetchMovies = filters => (dispatch, getState) => {
   const state = getState();
   dispatch({ type: C.START_FETCHING_MOVIES });
 
-  return MovieService.fetchBy(state.filters)
+  return MovieService.fetchBy(state.get('filters'))
     .then(movies => dispatch(addMovies(movies)))
     .catch((err) => {
       dispatch({
@@ -52,6 +52,6 @@ export const addMovieAlongSimilarMoviesGenres = movieId => async (dispatch, getS
   await dispatch(fetchMovie(movieId));
   const state = getState();
   dispatch(
-    fetchMovies({ filter: state.movie.genres.join(','), searchBy: 'genres' }),
+    fetchMovies({ filter: state.get('movie').genres.join(','), searchBy: 'genres' }),
   );
 };

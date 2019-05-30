@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import C from './constants';
 import Utils from '../services/utils/utils';
 
