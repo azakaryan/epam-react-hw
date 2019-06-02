@@ -1,4 +1,4 @@
-import { from } from 'r';
+import { from } from 'rxjs';
 import { TypeCheck } from './type-check';
 
 describe('TypeCheck tests', () => {

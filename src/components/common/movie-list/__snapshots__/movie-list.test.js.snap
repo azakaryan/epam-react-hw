@@ -1,45 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieItem Component should render correctly in "debug" mode 1`] = `
-<div
-  className="movies_main"
-/>
-`;
+exports[`MovieList Component should render correctly in "debug" mode 1`] = `""`;
 
-exports[`MovieItem Component should render movies correctly with given data 1`] = `
-<div
-  className="movies_main"
->
-  <Link
-    key="27205"
-    to="/movie/27205"
-  >
-    <div
-      className="movie_item"
-    >
-      <div
-        className="image"
-      >
-        <img
-          src="https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg"
-        />
-      </div>
-      <div
-        className="title"
-      >
-        <div>
-          Inception
-        </div>
-        <div>
-          2010
-        </div>
-      </div>
-      <div
-        className="genres"
-      >
-        Action & Thriller & Science Fiction & Mystery & Adventure
-      </div>
-    </div>
-  </Link>
-</div>
-`;
+exports[`MovieList Component should render movies correctly with given data 1`] = `""`;
