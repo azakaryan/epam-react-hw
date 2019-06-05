@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Filters Component should render correctly 1`] = `
+<div
+  className="main_container"
+>
+  <label
+    className="label"
+  >
+    FIND YOUR MOVIE
+  </label>
+  <div
+    className="input_wrapper"
+  >
+    <input
+      id="search-text"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="filters_wrapper"
+  >
+    <label>
+      SEARCH BY
+    </label>
+    <div
+      className="search_by_btns"
+    >
+      <WithStyles(Button)
+        color="default"
+        id="title"
+        onClick={[Function]}
+        variant="contained"
+      >
+        TITLE
+      </WithStyles(Button)>
+      <WithStyles(Button)
+        color="default"
+        id="genre"
+        onClick={[Function]}
+        variant="contained"
+      >
+        GENRE
+      </WithStyles(Button)>
+    </div>
+    <div
+      className="search_btn"
+    >
+      <WithStyles(Button)
+        color="primary"
+        id="apply-search"
+        onClick={[Function]}
+        variant="contained"
+      >
+        SEARCH
+      </WithStyles(Button)>
+    </div>
+  </div>
+</div>
+`;

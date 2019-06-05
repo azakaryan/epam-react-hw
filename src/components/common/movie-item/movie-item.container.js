@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { MovieItem } from './movie-item';
+import MovieItem from './movie-item';
 
 const moviesSelector = (state) => state.get('movies');
 const movieIdSelector = (state, movieId) => movieId;

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import expectEnzymify from 'expect';
 import enzymify from 'expect-enzyme';
-import { MovieItem } from './movie-item';
+import MovieItem from './movie-item';
 
 expectEnzymify.extend(enzymify());
 

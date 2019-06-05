@@ -36,6 +36,7 @@ export default class SearchFilters extends Component {
         <label className={style.label}>FIND YOUR MOVIE</label>
         <div className={style.input_wrapper}>
           <input
+            id="search-text"
             type="text"
             value={this.state.search}
             onChange={this.handleInputValueChange.bind(this)}
@@ -45,6 +46,7 @@ export default class SearchFilters extends Component {
           <label>SEARCH BY</label>
           <div className={style.search_by_btns}>
             <Button
+              id="title"
               variant="contained"
               color={this.state.searchBy === 'title' ? 'primary' : 'default'}
               onClick={this.toggleTitle.bind(this)}
@@ -52,6 +54,7 @@ export default class SearchFilters extends Component {
               TITLE
             </Button>
             <Button
+              id="genre"
               variant="contained"
               color={this.state.searchBy === 'genres' ? 'primary' : 'default'}
               onClick={this.toggleGenre.bind(this)}
@@ -61,6 +64,7 @@ export default class SearchFilters extends Component {
           </div>
           <div className={style.search_btn}>
             <Button
+              id="apply-search"
               variant="contained"
               color="primary"
               onClick={this.onSearch.bind(this)}

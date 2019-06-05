@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import SortFilters from './sort-filters';
 import { fetchMovies } from '../../../store/actions';
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onFiltersApply: (filters = {}) => dispatch((_, getState) => {
     const state = getState();
     if (!state.get('movies').length) {

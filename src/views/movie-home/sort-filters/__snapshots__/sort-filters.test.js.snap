@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sort Filters Component should render correctly 1`] = `
+<div
+  className="main_container"
+>
+  <div
+    className="title"
+  >
+    SORT BY
+  </div>
+  <div
+    className="content"
+  >
+    <label
+      className="active"
+      id="release_date"
+      onClick={[Function]}
+    >
+      release date
+    </label>
+    <label
+      className=""
+      id="rating"
+      onClick={[Function]}
+    >
+      rating
+    </label>
+  </div>
+</div>
+`;
