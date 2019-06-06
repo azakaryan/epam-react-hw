@@ -10,7 +10,7 @@ const getMovieById = createSelector(
   (movies, id) => movies.find(m => m.id === id),
 );
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   getMovie: movieId => getMovieById(state, movieId),
 });
 

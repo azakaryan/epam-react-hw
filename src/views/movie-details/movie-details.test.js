@@ -49,10 +49,4 @@ describe('Movie Home Component', () => {
     btn.simulate('click');
     expect(url).toEqual('/');
   });
-
-  // it('find element', () => {
-  //   const wrapper = shallow(<MovieDetails onLoad={onLoad} match={match} />);
-  //   const btn = wrapper.find({ id: 'search-btn'});
-  //   expectEnzymify(btn).toBeA(Button);
-  // });
 });

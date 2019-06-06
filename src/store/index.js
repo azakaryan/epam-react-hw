@@ -12,7 +12,7 @@ export const sampleData = {
   fetchingMovie: false,
 };
 
-const consoleMessagesProxy = () => next => (action) => {
+export const consoleMessagesProxy = () => next => (action) => {
   // Before action dispatch
   // console.log(` -- Dispatching actions: ${action.type}`);
 
@@ -29,4 +29,4 @@ const consoleMessagesProxy = () => next => (action) => {
 
 export const storeFactory = (initialState = sampleData) => {
   return applyMiddleware(thunk, consoleMessagesProxy)(createStore)(appReducer, Immutable.Map(initialState));
-}
+};
