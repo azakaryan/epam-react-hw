@@ -9,6 +9,11 @@ class MovieService {
   fetchBy(data) {
     const queryParams = queryString.stringify(data);
 
+    if (typeof document !== 'undefined') {
+      const newUrl = `${document.location.origin}${document.location.pathname}${queryParams ? `?${decodeURIComponent(queryParams)}` : ''}`;
+      history.pushState({ path: newUrl }, '', newUrl);
+    }
+
     if (!this.movies$) this.movies$ = new ReplaySubject(1);
 
     return fetch(

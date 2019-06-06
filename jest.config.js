@@ -3,9 +3,6 @@ const {defaults} = require('jest-config');
 module.exports = {
   snapshotSerializers: ['enzyme-to-json/serializer'],
   setupFiles: ['./src/setupTests.js'],
-
-
-
   modulePaths: ['/shared/vendor/modules'],
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx', 'css'],
   moduleDirectories: ['node_modules', 'bower_components', 'shared'],
@@ -20,5 +17,7 @@ module.exports = {
     "src/**/*.{js,jsx}",
     "!<rootDir>/node_modules/",
     "!<rootDir>/cypress/"
-  ]
+  ],
+  collectCoverage: true,
+  coverageReporters: ["json", "html"],
 };

@@ -6,6 +6,7 @@ import App from './App';
 
 expectEnzymify.extend(enzymify());
 
+
 describe('App Component', () => {
   it('should render correctly', () => {
     const component = shallow(<App />);
