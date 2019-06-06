@@ -9,7 +9,7 @@ export default class MovieCount extends Component {
   render() {
     return (
       <div className={style.main_container}>
-        <label className={style.count}>{this.props.count}</label>
+        <label id="count" className={style.count}>{this.props.count}</label>
         <span>movies found</span>
       </div>
     );

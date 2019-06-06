@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Home Component should render correctly 1`] = `
+<div
+  className="main_container"
+  id="movie-home"
+>
+  <Header />
+  <Connect(SearchFilters) />
+  <div
+    className="sort_and_count"
+  >
+    <Connect(MovieCount) />
+    <Connect(SortFilters) />
+  </div>
+  <div>
+    <Connect(MovieList) />
+  </div>
+</div>
+`;

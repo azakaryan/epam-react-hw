@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Home Component should render correctly 1`] = `
+<div
+  className="main"
+  id="movie-details"
+>
+  <div
+    className="search"
+  >
+    <WithStyles(Button)
+      color="primary"
+      id="search-btn"
+      onClick={[Function]}
+      variant="contained"
+    >
+      SEARCH
+    </WithStyles(Button)>
+  </div>
+  <Connect(MovieCover) />
+  <Connect(MovieList) />
+</div>
+`;

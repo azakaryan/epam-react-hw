@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Cover Component should render correctly 1`] = `
+<div
+  className="main"
+>
+  <div>
+    <div
+      className="left_section"
+    >
+      <img
+        alt="speakom"
+        src="https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg"
+      />
+    </div>
+    <div
+      className="right_section"
+    >
+      <div>
+        <div
+          className="title"
+        >
+          Inception
+        </div>
+        <div
+          className="rating"
+        >
+          16798
+        </div>
+      </div>
+      <div>
+        Oscar-winning Movies
+      </div>
+      <div>
+        <div
+          className="year"
+        >
+          2010
+        </div>
+        <div
+          className="duration"
+        >
+          154 min
+        </div>
+      </div>
+      <div>
+        Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: 'inception', the implantation of another person's idea into a target's subconscious.
+      </div>
+    </div>
+  </div>
+  <div
+    className="genres"
+  >
+    Action & Thriller & Science Fiction & Mystery & Adventure
+  </div>
+</div>
+`;

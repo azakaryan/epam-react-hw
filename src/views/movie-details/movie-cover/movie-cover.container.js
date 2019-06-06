@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import MovieCover from './movie-cover';
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   movie: state.get('movie'),
 });
 
